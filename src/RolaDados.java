@@ -1,11 +1,16 @@
+import java.util.Calendar;
+
 public class RolaDados {
-	Dado dices;
-	int n_dices;
-	int[] vals;
+	private Dado[] dices;
+	private int n_dices;
+	private int[] vals;
 
 	public RolaDados(int n) {
 		this.n_dices = n;
-		this.dices = new Dado();
+		this.dices = new Dado[n];
+		for (int i = 0; i < n; i++) {
+			dices[i] = new Dado(); 
+		}
 	}
 
 	public int[] rolar() {
@@ -13,8 +18,9 @@ public class RolaDados {
 		this.vals = new int[this.n_dices];
 
 		// Rola os dados
-		for (int i = 0; i < this.n_dices; i++) 
-			this.vals[i] = this.dices.rolar();
+		for (int i = 0; i < this.n_dices; i++) {
+			this.vals[i] = this.dices[i].rolar();
+		}
 		
 		return this.vals;
 	}
@@ -22,7 +28,7 @@ public class RolaDados {
 	public int[] rolar(boolean[] quais) {	
 		for (int i = 0; i < this.n_dices; i++) {
 			if (quais[i]) {
-				this.vals[i] = this.dices.rolar();
+				this.vals[i] = this.dices[i].rolar();
 			}
 		}
 		return vals;
