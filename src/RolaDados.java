@@ -9,6 +9,11 @@ public class RolaDados {
 		this.n_dices = n;
 		this.dices = new Dado[n];
 		for (int i = 0; i < n; i++) {
+			try {
+				Thread.sleep(100);                 // 1/10 second.
+			} catch(InterruptedException ex) {
+				Thread.currentThread().interrupt();
+			}
 			dices[i] = new Dado(); 
 		}
 	}
@@ -58,6 +63,7 @@ public class RolaDados {
 	}
 
 	public String toString() {
+		for 
 		return "";
 	}
 
