@@ -28,12 +28,31 @@ public class RolaDados {
 		return vals;
 	}
 
-/*	public int[] rolar(String s) {
+	public int[] rolar(String s) {
+		/*Split s by withe spaces. 
+		Ex: "1 2 7" will be 1, 2, 7 */
+		String[] parts = s.split(" ");
+		boolean[] aux = new boolean[this.n_dices];
+		int i, j;
 
+		// Create a bool's vector with the numbers in s
+		for (i = 0, j = 0; i < this.n_dices 
+			&& j < parts.length; i++) {
+			// If the i-th number is in parts, then it must be roled again
+			if (i == Integer.parseInt(parts[j])) {
+				aux[i] = true;
+				j++;	
+			}
+			else {
+				aux[i] = false;
+			}
+		}
+		// Retorna os novos dados com os do conteudo de "S" rejogados
+		return this.rolar(aux);
 	}
 
 	public String toString() {
 		return "";
 	}
-*/	
+
 }
