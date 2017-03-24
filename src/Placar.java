@@ -7,7 +7,7 @@ public class Placar {
 			scoreBoard[i] = 0;
 	}
 
-	/*Adiciona a pontua√ß√£o correspondente ao placar, mas n√£o checa se o movimento √© honesto*/
+	/*Adiciona a pontuaÁ„o correspondente ao placar, mas n„o checa se o movimento È honesto*/
 	public void add(int posicao, int[] dados) {
 
 		if (scoreBoard[posicao - 1] == 0) {
@@ -29,6 +29,70 @@ public class Placar {
 
 	@Override
 	public String toString() {
-		return "";
+		String scoreDisplay = "";
+		String aux = "";
+		int filledSpace;
+		
+		//For the first three rows
+		for (int i = 0; i < 4; i++) {
+			//(1) or 2, for example
+			aux = Integer.toString(scoreBoard[i]);
+			scoreDisplay += (scoreBoard[i] != 0) ? aux : "(1)";
+			
+			//Allign with spaces
+			filledSpace = (scoreBoard[i] != 0) ? aux.length() : 3;
+			for (int j = filledSpace; j < 7; j++)
+				scoreDisplay += " ";
+			
+			//More spaces
+			scoreDisplay += "|";
+			for (int j = 0; j < 3; j++)
+				scoreDisplay +=  " ";
+			
+			//Middle Column
+			aux = Integer.toString(scoreBoard[i+6]);
+			scoreDisplay += (scoreBoard[i+6] != 0) ? aux : "(7)";
+			
+			//Allign with spaces
+			filledSpace = (scoreBoard[i+6] != 0) ? aux.length() : 3;
+			for (int j = filledSpace; j < 7; j++)
+				scoreDisplay += " ";
+			
+			//More spaces
+			scoreDisplay += "|";
+			for (int j = 0; j < 3; j++)
+				scoreDisplay +=  " ";
+			
+			//Final Column
+			aux = Integer.toString(scoreBoard[i+3]);
+			scoreDisplay += (scoreBoard[i+3] != 0) ? aux : "(4)";
+			
+			//Allign with spaces, then a line break
+			filledSpace = (scoreBoard[i+3] != 0) ? aux.length() : 3;
+			for (int j = filledSpace; j < 4; j++)
+				scoreDisplay +=  " ";
+			scoreDisplay += "\n";
+			
+			//End of line
+			scoreDisplay += "--------------------------";
+		}
+		
+		//Allign with spaces
+		scoreDisplay += "        |   ";
+		
+		//Last Cell
+		aux = Integer.toString(scoreBoard[9]);
+		scoreDisplay += (scoreBoard[9] != 0) ? aux : "(10)";
+		
+		//Last allignment
+		filledSpace = (scoreBoard[9] != 0) ? aux.length() : 3;
+		for (int j = filledSpace; j < 4; j++)
+			scoreDisplay +=  " ";
+		scoreDisplay += "|\n";
+		
+		//Last line
+		scoreDisplay += "        +----------+\n";
+		
+		return scoreDisplay;
 	}
 }
