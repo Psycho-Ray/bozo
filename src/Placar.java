@@ -1,8 +1,6 @@
 public class Placar {
 	int[] scoreBoard = new int[10];
 	
-	//Just a test. Delet this on sight.
-	
 	/*Inicia com o placar zerado*/
 	public Placar() {
 		for (int i = 0; i < 10; i++)
@@ -25,7 +23,7 @@ public class Placar {
 	/*Retorna a soma dos pontos no placar*/
 	public int getScore() {
 		int sum = 0;
-		for (int i=0; i<10; i++) sum += scoreBoard[i];
+		for (int i = 0; i < 10; i++) sum += scoreBoard[i];
 		return sum;
 	}
 

@@ -9,6 +9,8 @@ public class bozo {
 			System.out.printf("%d ", aux[i]);
 		}
 		System.out.printf("\n");
-	
+		
+		System.out.println(rola);
+
 	}
 }

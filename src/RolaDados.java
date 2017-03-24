@@ -63,8 +63,28 @@ public class RolaDados {
 	}
 
 	public String toString() {
-		for 
-		return "";
+		String[][] aux = new String[this.n_dices][];
+		String ans = "";
+		
+		/*Makes the vals a string*/
+		for (int i = 0; i < this.n_dices; i++) 
+			ans += dices[i].getLado() + "\t\t";
+
+		ans += "\n";
+
+		/* Split the dice's drawings ans store them in aux*/
+		for (int i = 0; i < this.n_dices; i++) 
+			aux[i] = this.dices[i].toString().split("\n");
+
+		/* Put the drawings back together */
+		for (int i = 0; i < this.n_dices; i++) {
+			for (int j = 0; j < aux[i].length; j++) {
+				ans += aux[j][i] + "\t\t";
+			}
+			ans += "\n";
+		}
+
+		return ans;
 	}
 
 }
