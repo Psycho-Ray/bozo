@@ -42,6 +42,8 @@ public class Dado {
 		if (this.last == 6)
 			return "+-----+\n|* * *|\n|     |\n|* * *|\n+-----+";
 
+		/*If the max isn't a number between 1 and 6, 
+		then return the number as a string */
 		return "" + this.last;	
 	}
 }
