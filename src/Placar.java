@@ -23,7 +23,7 @@ public class Placar {
 	/*Retorna a soma dos pontos no placar*/
 	public int getScore() {
 		int sum = 0;
-		for (int i=0; i<10; i++) sum += scoreBoard[i];
+		for (int i = 0; i < 10; i++) sum += scoreBoard[i];
 		return sum;
 	}
 
