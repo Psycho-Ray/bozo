@@ -1,5 +1,3 @@
-import java.util.Calendar;
-
 public class RolaDados {
 	private Dado[] dices;
 	private int n_dices;
@@ -68,7 +66,7 @@ public class RolaDados {
 		
 		/*Makes the vals a string*/
 		for (int i = 0; i < this.n_dices; i++) 
-			ans += dices[i].getLado() + "\t\t";
+			ans += dices[i].getLado() + "\t";
 
 		ans += "\n";
 
@@ -78,9 +76,8 @@ public class RolaDados {
 
 		/* Put the drawings back together */
 		for (int i = 0; i < this.n_dices; i++) {
-			for (int j = 0; j < aux[i].length; j++) {
-				ans += aux[j][i] + "\t\t";
-			}
+			for (int j = 0; j < aux[i].length; j++)
+				ans += aux[j][i] + " ";
 			ans += "\n";
 		}
 
