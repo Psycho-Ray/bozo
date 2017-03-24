@@ -1,6 +1,8 @@
 public class Placar {
 	int[] scoreBoard = new int[10];
 	
+	//Just a test. Delet this on sight.
+	
 	/*Inicia com o placar zerado*/
 	public Placar() {
 		for (int i = 0; i < 10; i++)
