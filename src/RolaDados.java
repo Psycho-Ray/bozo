@@ -77,7 +77,7 @@ public class RolaDados {
 		/* Put the drawings back together */
 		for (int i = 0; i < this.n_dices; i++) {
 			for (int j = 0; j < aux[i].length; j++)
-				ans += aux[j][i] + " ";
+				ans += aux[j][i] + "\t";
 			ans += "\n";
 		}
 

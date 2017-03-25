@@ -10,8 +10,13 @@ public class Placar {
 	/*Adiciona a pontuação correspondente ao placar, mas não checa se o movimento é honesto*/
 	public void add(int posicao, int[] dados) {
 
+
 		if (scoreBoard[posicao - 1] == 0) {
-			if (posicao <= 6) scoreBoard[posicao - 1] = posicao * dados.length;
+			if (posicao <= 6){
+				int counter = 0;
+				for (int i = 0; i < dados.length; i++) if (posicao-1 == dados[i]) counter++;
+				scoreBoard[posicao - 1] = posicao * counter;
+			}
 			else if (posicao == 7) scoreBoard[6] = 15;
 			else if (posicao == 8) scoreBoard[7] = 20;
 			else if (posicao == 9) scoreBoard[8] = 30;
