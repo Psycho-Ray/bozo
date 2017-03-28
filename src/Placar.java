@@ -7,7 +7,7 @@ public class Placar {
 			scoreBoard[i] = 0;
 	}
 
-	/*Adiciona a pontuaÁ„o correspondente ao placar, mas n„o checa se o movimento È honesto*/
+	/*Adiciona a pontua√ß√£o correspondente ao placar, mas n√£o checa se o movimento √© honesto*/
 	public void add(int posicao, int[] dados) {
 
 
@@ -17,7 +17,15 @@ public class Placar {
 				for (int i = 0; i < dados.length; i++) if (posicao-1 == dados[i]) counter++;
 				scoreBoard[posicao - 1] = posicao * counter;
 			}
-			else if (posicao == 7) scoreBoard[6] = 15;
+			else if (posicao == 7) {
+				int a, b, counterA=1, counterB=0;
+				for (a = dados[0]; int i=1; i < dados.length; i++) {
+					if (dados[i] == a) counterA++;
+					else counterB++;
+				}
+				if ((counterA == 3 && counterB == 2) || (counterA == 2 && counterB == 3))
+					scoreBoard[6] = 15;
+			}
 			else if (posicao == 8) scoreBoard[7] = 20;
 			else if (posicao == 9) scoreBoard[8] = 30;
 			else if (posicao == 10) scoreBoard[9] = 40;
